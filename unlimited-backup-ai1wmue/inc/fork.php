@@ -2,7 +2,24 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Kangaroos cannot jump here' );
 }
-// The below code stops original updates from overwriting the fork and cleans up some of the servmask branding and items from the plugin rows.
+
+if ( ! class_exists( 'Ai1wmue_Eula_Controller', false ) ) {
+	class Ai1wmue_Eula_Controller {
+		public static function should_display_eula() {
+			return false;
+		}
+
+		public static function display_eula_modal() {
+			// Suppressed
+		}
+
+		public static function eula_response() {
+			// Suppressed or return success
+			wp_send_json_success();
+		}
+	}
+}
+// The below code stops original updates from overwriting the fork and cleans up some of the servmask branding and items from the Plugin
 // === Remove Ai1wm "Check for Updates" and "Contact Support" Links ===
 add_filter( 'plugin_row_meta', 'rup_unlimited_backup_ai1wmue_filter_plugin_row_meta', 15, 2 );
 function rup_unlimited_backup_ai1wmue_filter_plugin_row_meta( $plugin_meta, $plugin_file ) {
@@ -17,17 +34,16 @@ function rup_unlimited_backup_ai1wmue_filter_plugin_row_meta( $plugin_meta, $plu
 }
 
 // === Prevent Update Messages for This Plugin ===
-add_filter( 'option_ai1wm_updater', 'rup_unlimited_backup_ai1wmue_clean_ai1wm_updater_option' );
-function rup_unlimited_backup_ai1wmue_clean_ai1wm_updater_option( $updater ) {
+add_filter( 'option_ai1wm_updater', 'rup_unlimited_backup_ai1wmue_combined_updater_cleanup' );
+function rup_unlimited_backup_ai1wmue_combined_updater_cleanup( $updater ) {
 	if ( ! is_array( $updater ) ) {
 		return $updater;
 	}
 
-	// Keys that ServMask uses for their official Unlimited extension
 	$keys_to_remove = [
 		'all-in-one-wp-migration-unlimited-extension',
 		'forked-all-in-one-wp-migration-unlimited-extension',
-		// You can add more if needed
+		'ai1wm-unlimited-fork',
 	];
 
 	foreach ( $keys_to_remove as $key ) {
@@ -37,14 +53,6 @@ function rup_unlimited_backup_ai1wmue_clean_ai1wm_updater_option( $updater ) {
 	return $updater;
 }
 
-// === Remove Ai1wm Internal Update Notice ===
-add_filter( 'option_ai1wm_updater', 'rup_unlimited_backup_ai1wmue_remove_internal_update_message' );
-function rup_unlimited_backup_ai1wmue_remove_internal_update_message( $updater ) {
-	if ( isset( $updater['ai1wm-unlimited-fork'] ) ) {
-		unset( $updater['ai1wm-unlimited-fork'] );
-	}
-	return $updater;
-}
 
 // === Remove This Plugin from Ai1wm Extensions List ===
 add_action( 'plugins_loaded', 'rup_unlimited_backup_ai1wmue_filter_ai1wm_extensions', 20 );
