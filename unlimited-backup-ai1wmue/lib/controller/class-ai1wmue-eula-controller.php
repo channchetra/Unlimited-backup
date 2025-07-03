@@ -34,30 +34,7 @@ class Ai1wmue_Eula_Controller {
 	 *
 	 * @return boolean
 	 */
-	/* public static function should_display_eula() {
-		// Only show on admin pages
-		if ( ! is_admin() ) {
-			return false;
-		}
-
-		// Check if user has capability to manage plugins
-		if ( ! current_user_can( 'activate_plugins' ) ) {
-			return false;
-		}
-
-		// Additional check: verify the plugin is actually active
-		if ( ! is_plugin_active( AI1WMUE_PLUGIN_BASENAME ) ) {
-			return false;
-		}
-
-		// Check if EULA has been accepted for current version
-		$accepted_version = get_option( 'ai1wmue_eula_accepted_version', '' );
-
-		// Show EULA if not accepted or if version has changed
-		return ( $accepted_version !== AI1WMUE_EULA_VERSION );
-	} */
-
-	public static function should_display_eula() {
+		public static function should_display_eula() {
 		return false;
 		}
 

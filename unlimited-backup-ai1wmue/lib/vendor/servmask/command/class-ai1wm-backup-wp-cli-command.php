@@ -515,7 +515,7 @@ if ( class_exists( 'Ai1wm_Backup_WP_CLI_Base' ) && ! class_exists( 'Ai1wm_Backup
 		public function check_for_updates( $args = array(), $assoc_args = array() ) {
 			try {
 				// Check for updtes
-				//Ai1wm_Updater::check_for_updates();
+				Ai1wm_Updater::check_for_updates();
 
 				WP_CLI::success( __( 'Check for updates completed.', AI1WM_PLUGIN_NAME ) );
 			} catch ( Exception $e ) {

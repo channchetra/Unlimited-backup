@@ -17,6 +17,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Kangaroos cannot jump here' );
 }
+
 if ( is_multisite() ) {
 	// Multisite Extension shall be used instead
 	return;
@@ -96,7 +97,6 @@ function ai1wmue_activate_plugin() {
 // = All app initialization is done in Ai1wmue_Main_Controller __constructor =
 // ===========================================================================
 $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
-
 
 
 // ===========================================================================
