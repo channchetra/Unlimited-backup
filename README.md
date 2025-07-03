@@ -7,13 +7,6 @@ Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It
 aims to provide continued freedom, maintainability, and usability under the [GPL
 license](https://www.gnu.org/licenses/gpl-2.0.html).
 
-For more background, please read the full article on our experience with
-ServMask and software freedom: 👉 [Software Freedom, the GPL, and Our Experience
-with
-ServMask](https://techarticles.co.uk/software-freedom-the-gpl-and-our-experience-with-servmask/)
-
- 
-
 ✨ Key Changes in This Fork
 --------------------------
 

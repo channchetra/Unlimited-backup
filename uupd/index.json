@@ -1,7 +1,7 @@
 {
     "slug": "Unlimited-backup",
     "name": "Unlimited Backup Plugin",
-    "version": "2.71.2",
+    "version": "2.71.3",
     "author": "stingray82",
     "author_homepage": "https://github.com/stingray82/",
     "requires_php": "8.0",
@@ -13,7 +13,7 @@
         "frequently_asked_questions": "= Why was this plugin created? =<br />\r\nThis plugin is a fork of the Unlimited extension by all-in-one-migration after they changed there EULA policy and cancelled my licence I decided to fork and update and merge there changes moving forward into this extension, you can read more about it here<br />\r\nhttps://techarticles.co.uk/software-freedom-the-gpl-and-our-experience-with-servmask/<br />\r\n= Can anyone do this? =<br />\r\nThe plugin is GPL and the GPL licence allows you to do this, if you want to make your own fork this plugin and knock yourself out<br />\r\n= So no updates? =<br />\r\nI plan on pushing updates to this moving forward based on the development of the original plugin and its addon, updates will be served automatically using another of my projects UUPD just like any other WordPress plugin<br />\r\n= Can I contribute? =<br />\r\nYes please do, create a pull request and after testing we can then merge it",
         "changelog": ""
     },
-    "last_updated": "2025-07-03 21:34:35",
+    "last_updated": "2025-07-03 21:37:19",
     "download_url": "https://github.com/stingray82/Unlimited-backup/releases/latest/download/unlimited-backup-ai1wmue.zip",
     "banners": {
         "low": "https://raw.githubusercontent.com/stingray82/Unlimited-backup/main/uupd/banner-772x250.png",
