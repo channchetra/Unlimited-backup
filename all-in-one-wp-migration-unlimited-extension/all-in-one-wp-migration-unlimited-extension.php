@@ -5,7 +5,7 @@
  * Tested up to:      6.8.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           2.72.1
+ * Version:           2.72.2
  * Author:            stingray82
  * Author URI:        https://github.com/stingray82/
  * License:           GPL2
@@ -102,7 +102,7 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 // ===========================================================================
 // = Let's Fork this thing! =
 // ===========================================================================
-define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.72.1');
+define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.72.2');
 require_once __DIR__ . '/inc/fork.php';
 
 add_action( 'plugins_loaded', function() {
