@@ -5,7 +5,7 @@
  * Tested up to:      6.8.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           2.70.2
+ * Version:           2.70.3
  * Author:            stingray82
  * Author URI:        https://github.com/stingray82/
  * License:           GPL2
@@ -139,6 +139,7 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 // ===========================================================================
 // = Lets Fork this thing! =
 // ===========================================================================
+define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.70.3');
 require_once __DIR__ . '/inc/fork.php';
 add_action( 'plugins_loaded', function() {
     // 1) Load our universal drop-in. Because that file begins with "namespace UUPD\V1;",
@@ -150,7 +151,7 @@ add_action( 'plugins_loaded', function() {
         'plugin_file' => plugin_basename( __FILE__ ),             // e.g. "simply-static-export-notify/simply-static-export-notify.php"
         'slug'        => 'unlimited-backup-ai1wmue',           // must match your updater‐server slug
         'name'        => 'Unlimited Backup Plugin',         // human‐readable plugin name
-        'version'     => AI1WMUE_VERSION, // same as the VERSION constant above
+        'version'     => RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION, // same as the VERSION constant above
         'key'         => '',                 // your secret key for private updater
         'server'      => 'https://raw.githubusercontent.com/stingray82/Unlimited-backup/main/uupd/index.json',
     ];

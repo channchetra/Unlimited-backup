@@ -2,8 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Kangaroos cannot jump here' );
 }
-// The below code stops original updates from overwriting the fork
-
+// The below code stops original updates from overwriting the fork and cleans up some of the servmask branding and items from the plugin rows.
 // === Remove Ai1wm "Check for Updates" and "Contact Support" Links ===
 add_filter( 'plugin_row_meta', 'rup_unlimited_backup_ai1wmue_filter_plugin_row_meta', 15, 2 );
 function rup_unlimited_backup_ai1wmue_filter_plugin_row_meta( $plugin_meta, $plugin_file ) {
@@ -18,12 +17,24 @@ function rup_unlimited_backup_ai1wmue_filter_plugin_row_meta( $plugin_meta, $plu
 }
 
 // === Prevent Update Messages for This Plugin ===
-add_filter( 'site_transient_update_plugins', 'rup_unlimited_backup_ai1wmue_remove_update_response', 999 );
-function rup_unlimited_backup_ai1wmue_remove_update_response( $transient ) {
-	if ( isset( $transient->response['unlimited-backup-ai1wmue/unlimited-backup-ai1wmue.php'] ) ) {
-		unset( $transient->response['unlimited-backup-ai1wmue/unlimited-backup-ai1wmue.php'] );
+add_filter( 'option_ai1wm_updater', 'rup_unlimited_backup_ai1wmue_clean_ai1wm_updater_option' );
+function rup_unlimited_backup_ai1wmue_clean_ai1wm_updater_option( $updater ) {
+	if ( ! is_array( $updater ) ) {
+		return $updater;
 	}
-	return $transient;
+
+	// Keys that ServMask uses for their official Unlimited extension
+	$keys_to_remove = [
+		'all-in-one-wp-migration-unlimited-extension',
+		'forked-all-in-one-wp-migration-unlimited-extension',
+		// You can add more if needed
+	];
+
+	foreach ( $keys_to_remove as $key ) {
+		unset( $updater[ $key ] );
+	}
+
+	return $updater;
 }
 
 // === Remove Ai1wm Internal Update Notice ===
