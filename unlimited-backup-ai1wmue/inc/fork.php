@@ -3,22 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Kangaroos cannot jump here' );
 }
 
-if ( ! class_exists( 'Ai1wmue_Eula_Controller', false ) ) {
-	class Ai1wmue_Eula_Controller {
-		public static function should_display_eula() {
-			return false;
-		}
-
-		public static function display_eula_modal() {
-			// Suppressed
-		}
-
-		public static function eula_response() {
-			// Suppressed or return success
-			wp_send_json_success();
-		}
-	}
-}
 // The below code stops original updates from overwriting the fork and cleans up some of the servmask branding and items from the Plugin
 // === Remove Ai1wm "Check for Updates" and "Contact Support" Links ===
 add_filter( 'plugin_row_meta', 'rup_unlimited_backup_ai1wmue_filter_plugin_row_meta', 15, 2 );

@@ -5,7 +5,7 @@
  * Tested up to:      6.8.1
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           2.71.1
+ * Version:           2.71.2
  * Author:            stingray82
  * Author URI:        https://github.com/stingray82/
  * License:           GPL2
@@ -100,25 +100,22 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 
 
 // ===========================================================================
-// = Lets Fork this thing! =
+// = Let's Fork this thing! =
 // ===========================================================================
-define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.71.1');
+define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.71.2');
 require_once __DIR__ . '/inc/fork.php';
+
 add_action( 'plugins_loaded', function() {
-    // 1) Load our universal drop-in. Because that file begins with "namespace UUPD\V1;",
-    //    both the class and the helper live under UUPD\V1.
-    require_once __DIR__ . '/inc/updater.php';
+	require_once __DIR__ . '/inc/updater.php';
 
-    // 2) Build a single $updater_config array:
-    $updater_config = [
-        'plugin_file' => plugin_basename( __FILE__ ),             // e.g. "simply-static-export-notify/simply-static-export-notify.php"
-        'slug'        => 'unlimited-backup-ai1wmue',           // must match your updater‐server slug
-        'name'        => 'Unlimited Backup Plugin',         // human‐readable plugin name
-        'version'     => RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION, // same as the VERSION constant above
-        'key'         => '',                 // your secret key for private updater
-        'server'      => 'https://raw.githubusercontent.com/stingray82/Unlimited-backup/main/uupd/index.json',
-    ];
+	$updater_config = [
+		'plugin_file' => plugin_basename( __FILE__ ),
+		'slug'        => 'unlimited-backup-ai1wmue',
+		'name'        => 'Unlimited Backup Plugin',
+		'version'     => RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION,
+		'key'         => '',
+		'server'      => 'https://raw.githubusercontent.com/stingray82/Unlimited-backup/main/uupd/index.json',
+	];
 
-    // 3) Call the helper in the UUPD\V1 namespace:
-    \UUPD\V1\UUPD_Updater_V1::register( $updater_config );
+	\UUPD\V1\UUPD_Updater_V1::register( $updater_config );
 }, 1 );

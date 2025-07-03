@@ -1,146 +1,122 @@
-Unlimited Backup
-================
+Unlimited Backup Plugin – Fork of ServMask Unlimited Extension
+==============================================================
 
-This is a community-maintained fork of the original **Unlimited Extension** for
-the All-in-One WP Migration plugin.
+This project is a community-maintained fork of the "Unlimited Extension" for the
+[All-in-One WP
+Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It
+aims to provide continued freedom, maintainability, and usability under the [GPL
+license](https://www.gnu.org/licenses/gpl-2.0.html).
 
- 
-
-⚠️ Why This Fork Exists
-----------------------
-
-We created this fork to maintain **freedom, transparency, and update control**
-under the terms of the [GNU General Public License
-(GPL)](https://www.gnu.org/licenses/gpl-3.0.html).
-
-The original developer, ServMask, uses update mechanics and messaging that: -
-**Block or warn about GPL forks** ("You may be a victim of software
-counterfeiting...") - **Override forks silently via their own update
-infrastructure** - Include non-free terms like forced EULAs (in a GPL
-environment)
-
- 
-
-More details on our experience with ServMask and the motivation behind this fork
-are in this article:
-
-  
-👉 [Software Freedom, the GPL, and Our Experience with
+For more background, please read the full article on our experience with
+ServMask and software freedom: 👉 [Software Freedom, the GPL, and Our Experience
+with
 ServMask](https://techarticles.co.uk/software-freedom-the-gpl-and-our-experience-with-servmask/)
 
  
 
-✅ Changes Made in This Fork
----------------------------
+✨ Key Changes in This Fork
+--------------------------
+
+### ✅ EULA Prompt Removed
+
+-   The forced EULA modal introduced by ServMask was removed.
+
+-   File modified: `lib/controller/class-ai1wmue-eula-controller.php`
+
+-   Replacement logic added to bypass `should_display_eula()`
+
+### ✅ Independent Update Mechanism
+
+-   The fork includes its own secure update server using
+    [UUPD](https://github.com/stingray82/uupd).
+
+-   File added: `inc/updater.php`
+
+-   Configuration defined in: `unlimited-backup-ai1wmue.php`
+
+### ✅ ServMask Update Checks and Branding Removed
+
+-   File added: `inc/fork.php`
+
+-   Prevents ServMask’s updater from injecting misleading update messages.
+
+-   Removes "Check for Updates" and "Contact Support" links pointing to
+    ServMask.
+
+-   Cleans up plugin row meta data.
+
+### ✅ Google Tag Manager (GTM) Disabled
+
+-   File manually cleaned: `lib/view/common/google-tag-manager.php`
+
+-   The GTM snippet was removed to prevent unwanted telemetry.
 
  
 
-### 1. ❌ Removed EULA Controller
+### 🔐 Telemetry
 
--   stubbed the `lib/controller/class-ai1wmue-eula-controller.php`
-
--   The original plugin forced a EULA pop-up — this contradicts the spirit of
-    GPL licensing.
-
- 
-
-### 2. 🛡️ Added `inc/fork.php` to Suppress ServMask’s Branding & Update System
-
-This file: - Removes “Check for Updates” and “Contact Support” links from the
-plugin row - Prevents ServMask’s updater from injecting update messages (like
-anti-piracy warnings) - Filters the internal `ai1wm_updater` data so it ignores
-our fork - Blocks inclusion in `Ai1wm_Extensions::get()` to avoid unwanted
-ServMask behavior
+As of the current version Google Tag Manager has been disabled, there could be
+other calls home in the plugin and tracking but we will continue to slowly
+remove them
 
  
 
-### 3. 🔄 Added Universal Updater (`inc/updater.php`)
+📁 Files to Edit in Future Updates
+---------------------------------
 
--   Integrated the [UUPD project](https://github.com/stingray82/uupd) to allow
-    **custom updates from GitHub** (or another private update server)
+Use this list to reapply customizations if you merge changes from upstream:
 
--   No additional license keys, no telemetry, no nonsense
+1.  **GTM Tracking**
 
--    
+    -   File: `lib/view/common/google-tag-manager.php`
 
-🚀 How Updates Work Now
-----------------------
+    -   Remove the `<script>` Google Tag block entirely.
 
-The updater is defined in `unlimited-backup-ai1wmue.php`:
+2.  **EULA Enforcement**
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.70.3');
-require_once __DIR__ . '/inc/fork.php';
+    -   File: `lib/controller/class-ai1wmue-eula-controller.php`
 
-add_action( 'plugins_loaded', function() {
-    require_once __DIR__ . '/inc/updater.php';
+    -   Replace:
 
-    \UUPD\V1\UUPD_Updater_V1::register([
-        'plugin_file' => plugin_basename( __FILE__ ),
-        'slug'        => 'unlimited-backup-ai1wmue',
-        'name'        => 'Unlimited Backup Plugin',
-        'version'     => RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION,
-        'key'         => '',
-        'server'      => 'https://raw.githubusercontent.com/stingray82/Unlimited-backup/main/uupd/index.json',
-    ]);
-}, 1);
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        public static function should_display_eula() {
+            return false;
+        }
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This means you can: - Get updates via GitHub or your own JSON-based server -
-Stay in full control — no external update hijacks or EULA traps
+3.  **Main Plugin File Changes**
 
-📦 Plugin Folder Structure
--------------------------
+    -   File: `unlimited-backup-ai1wmue.php`
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-unlimited-backup-ai1wmue/
-├── inc/
-│   ├── fork.php            ← Kills ServMask's update and branding logic
-│   └── updater.php         ← UUPD-based GitHub updater
-├── unlimited-backup-ai1wmue.php
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    -   Ensure it:
 
- 
+        -   Loads `inc/fork.php` early.
 
-🧾 License
----------
+        -   Defines version constant: `RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION`
 
-This fork, like the original plugin, is licensed under the **GNU GPL v3 or
-later**.
-
-We are proud to continue that tradition — **free as in freedom**.
+        -   Registers updater via `inc/updater.php` with `UUPD_Updater_V1`.
 
  
 
 🙌 Credits
 ---------
 
--   [ServMask Inc.](https://servmask.com) — for the original plugin
+-   [ServMask Inc.](https://servmask.com/) — for the original plugin
 
--   [UUPD Project](https://github.com/stingray82/uupd) — for the lightweight
+-   [UUPD Project](https://github.com/stingray82/uupd) — for the lightweight
     update system
-
- 
-
-🔍 Telemetry Notice
-------------------
-
-As of the current version, this fork **does not yet remove ServMask’s telemetry
-code**.  
-However, in future releases, we intend to **stub or fully remove any tracking or
-data-reporting features**.
-
-If you're interested in helping, or have insights on safe removal of
-telemetry-related hooks, we would love your input.
 
  
 
 🤝 Contributions Welcome
 -----------------------
 
-This project is community-driven. We welcome: - Pull requests - Bug reports -
-Suggestions for improvements or enhancements
+Pull requests and issue suggestions are welcome. Especially if you want to:
 
-Feel free to fork, improve, and open an issue or PR on GitHub.
+-   Help stub any remaining telemetry
 
-Your help makes this plugin better for everyone.
+-   Improve update security
+
+-   Refactor patching into optional modules
+
+**License**: GPLv2
