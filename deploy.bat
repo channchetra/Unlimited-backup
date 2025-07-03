@@ -7,9 +7,9 @@ REM ─────────────────────────�
 SET "PLUIGN_NAME=Unlimited Backup Plugin"
 SET "PLUGIN_TAGS=All-in-one-migration, backup, unlimited"
 SET "HEADER_SCRIPT=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\myplugin_headers.php"
-SET "PLUGIN_DIR=C:\Users\Nathan\Git\Unlimited-backup\unlimited-backup-ai1wmue\"
+SET "PLUGIN_DIR=C:\Users\Nathan\Git\Unlimited-backup\all-in-one-wp-migration-unlimited-extension\"
 IF "%PLUGIN_DIR:~-1%"=="\" SET "PLUGIN_DIR=%PLUGIN_DIR:~0,-1%"
-SET "PLUGIN_FILE=%PLUGIN_DIR%\unlimited-backup-ai1wmue.php"
+SET "PLUGIN_FILE=%PLUGIN_DIR%\all-in-one-wp-migration-unlimited-extension.php"
 SET "CHANGELOG_FILE=changelog.txt"
 SET "STATIC_FILE=static.txt"
 SET "README=%PLUGIN_DIR%\readme.txt"
@@ -21,7 +21,7 @@ REM GitHub settings
 SET "GITHUB_REPO=stingray82/Unlimited-backup"
 SET "TOKEN_FILE=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\github_token.txt"
 SET /P GITHUB_TOKEN=<"%TOKEN_FILE%"
-SET "ZIP_NAME=unlimited-backup-ai1wmue.zip"
+SET "ZIP_NAME=all-in-one-wp-migration-unlimited-extension.zip"
 
 REM JSON Settings
 SET "GENERATOR_SCRIPT=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\generate_index.php"
