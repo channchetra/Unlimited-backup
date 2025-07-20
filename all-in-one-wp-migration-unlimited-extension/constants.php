@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // ==================
 // = Plugin Version =
 // ==================
-define( 'AI1WMUE_VERSION', '2.72' );
+define( 'AI1WMUE_VERSION', '2.73' );
 
 // ===============
 // = Plugin Name =
@@ -86,8 +86,3 @@ define( 'AI1WMUE_MIN_AI1WM_VERSION', '7.84' );
 // = Purchase ID =
 // ===============
 define( 'AI1WMUE_PURCHASE_ID', 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX' );
-
-// ================
-// = EULA Version =
-// ================
-define( 'AI1WMUE_EULA_VERSION', '1.0' );

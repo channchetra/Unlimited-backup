@@ -54,10 +54,6 @@ require_once AI1WMUE_CONTROLLER_PATH .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wmue-settings-controller.php';
 
-require_once AI1WMUE_CONTROLLER_PATH .
-			DIRECTORY_SEPARATOR .
-			'class-ai1wmue-eula-controller.php';
-
 require_once AI1WMUE_MODEL_PATH .
 			DIRECTORY_SEPARATOR .
 			'class-ai1wmue-settings.php';

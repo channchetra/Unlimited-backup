@@ -56,7 +56,6 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_import_scripts_and_styles' ), 20 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backups_scripts_and_styles' ), 20 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_settings_scripts_and_styles' ), 20 );
-		add_action( 'admin_footer', 'Ai1wmue_Eula_Controller::display_eula_modal' );
 	}
 
 	/**
@@ -279,10 +278,6 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 	public function router() {
 		if ( current_user_can( 'export' ) ) {
 			add_action( 'wp_ajax_ai1wmue_folder_browser', 'Ai1wmue_Settings_Controller::list_folders' );
-		}
-
-		if ( current_user_can( 'activate_plugins' ) ) {
-			add_action( 'wp_ajax_ai1wmue_eula_response', 'Ai1wmue_Eula_Controller::eula_response' );
 		}
 	}
 

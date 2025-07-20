@@ -2,10 +2,10 @@
 /**
  * Plugin Name:       Unlimited Backup Plugin
  * Description:       Extension for All-in-One WP Migration that enables unlimited size exports and imports
- * Tested up to:      6.8.1
+ * Tested up to:      6.8.2
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           2.72.3
+ * Version:           2.73
  * Author:            stingray82
  * Author URI:        https://github.com/stingray82/
  * License:           GPL2
@@ -102,7 +102,7 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 // ===========================================================================
 // = Let's Fork this thing! =
 // ===========================================================================
-define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.72.3');
+define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.73');
 require_once __DIR__ . '/inc/fork.php';
 
 add_action( 'plugins_loaded', function() {

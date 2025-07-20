@@ -3,8 +3,8 @@ Contributors: reallyusefulplugins
 Donate link: https://reallyusefulplugins.com/donate
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
-Tested up to: 6.8.1
-Stable tag: 2.72.3
+Tested up to: 6.8.2
+Stable tag: 2.73
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,3 +28,5 @@ I plan on pushing updates to this moving forward based on the development of the
 Yes please do, create a pull request and after testing we can then merge it
  
 == Changelog == 
+= 2.73 20 July 2025 =
+Update to Native 2.73 - ServMask Removed EULA
