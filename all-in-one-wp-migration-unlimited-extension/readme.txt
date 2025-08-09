@@ -1,6 +1,5 @@
 === Unlimited Backup Plugin ===
-Contributors: reallyusefulplugins
-Donate link: https://reallyusefulplugins.com/donate
+Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
 Tested up to: 6.8.2

@@ -7,6 +7,12 @@ Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It
 aims to provide continued freedom, maintainability, and usability under the [GPL
 license](https://www.gnu.org/licenses/gpl-2.0.html).
 
+### Please Note 1st August 2025:
+
+I have recevied a DMCA takedown request for this repo, it is inaccurate and
+poorly worded and this repository is totally legal under the GPL licence as such
+I have defended it but ultimately github will make there own decision on this.
+
 ✨ Key Changes in This Fork
 --------------------------
 
