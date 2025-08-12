@@ -1,7 +1,7 @@
 {
     "slug": "Unlimited-backup",
     "name": "Unlimited Backup Plugin",
-    "version": "2.73.3",
+    "version": "2.73.4",
     "author": "stingray82",
     "author_homepage": "https://github.com/stingray82/",
     "requires_php": "8.0",
@@ -11,9 +11,9 @@
         "description": "Install on your dashboard and it will enable unlimited backup",
         "installation": "1. Upload the `unlimited-backup-ai1wmue` folder to the `/wp-content/plugins/` directory.<br />\r\n2. Activate the plugin through the 'Plugins' menu in WordPress.",
         "frequently_asked_questions": "= Why was this plugin created? =<br />\r\nThis plugin is a fork of the Unlimited extension by all-in-one-migration after they changed there EULA policy and cancelled my licence I decided to fork and update and merge there changes moving forward into this extension, you can read more about it here<br />\r\nhttps://techarticles.co.uk/software-freedom-the-gpl-and-our-experience-with-servmask/<br />\r\n= Can anyone do this? =<br />\r\nThe plugin is GPL and the GPL licence allows you to do this, if you want to make your own fork this plugin and knock yourself out<br />\r\n= So no updates? =<br />\r\nI plan on pushing updates to this moving forward based on the development of the original plugin and its addon, updates will be served automatically using another of my projects UUPD just like any other WordPress plugin<br />\r\n= Can I contribute? =<br />\r\nYes please do, create a pull request and after testing we can then merge it",
-        "changelog": "<h4>2.73.4 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0 - build automation check 1</li></ul><h4>2.73.2 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0 - in readme updated automation</li></ul><h4>2.73.1 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0</li></ul><h4>2.73 20 July 2025</h4><ul><li>Update to Native 2.73 - ServMask Removed EULA</li></ul>"
+        "changelog": "<h4>2.73.5 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0 - build automation check 2</li></ul><h4>2.73.4 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0 - build automation check 1</li></ul><h4>2.73.2 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0 - in readme updated automation</li></ul><h4>2.73.1 12 August 2025</h4><ul><li>Corrected License Issue for GPL Software V3.0</li></ul><h4>2.73 20 July 2025</h4><ul><li>Update to Native 2.73 - ServMask Removed EULA</li></ul>"
     },
-    "last_updated": "2025-08-12 18:47:55",
+    "last_updated": "2025-08-12 18:49:19",
     "download_url": "https://github.com/stingray82/Unlimited-backup/releases/latest/download/all-in-one-wp-migration-unlimited-extension.zip",
     "banners": {
         "low": "https://raw.githubusercontent.com/stingray82/Unlimited-backup/main/uupd/banner-772x250.png",

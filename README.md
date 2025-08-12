@@ -5,7 +5,7 @@ This project is a community-maintained fork of the "Unlimited Extension" for the
 [All-in-One WP
 Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It
 aims to provide continued freedom, maintainability, and usability under the [GPL
-license](https://www.gnu.org/licenses/gpl-2.0.html).
+license](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ### Please Note 1st August 2025:
 

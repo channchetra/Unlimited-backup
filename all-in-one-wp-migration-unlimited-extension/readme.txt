@@ -3,10 +3,10 @@ Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
 Tested up to: 6.8.2
-Stable tag: 2.73.3
+Stable tag: 2.73.4
 Requires PHP: 8.0
 License: GPL-3.0-or-later
-License URI:https://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 An addon to allow unlimited file size for all-in-one-migration plugin
 == Description ==
@@ -25,8 +25,11 @@ The plugin is GPL and the GPL licence allows you to do this, if you want to make
 I plan on pushing updates to this moving forward based on the development of the original plugin and its addon, updates will be served automatically using another of my projects UUPD just like any other WordPress plugin
 = Can I contribute? =
 Yes please do, create a pull request and after testing we can then merge it
+ 
+== Changelog == 
+= 2.73.5 12 August 2025 = 
+Corrected License Issue for GPL Software V3.0 - build automation check 2
 
-== Changelog ==
 = 2.73.4 12 August 2025 = 
 Corrected License Issue for GPL Software V3.0 - build automation check 1
 
