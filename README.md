@@ -118,4 +118,4 @@ Pull requests and issue suggestions are welcome. Especially if you want to:
 
 -   Refactor patching into optional modules
 
-**License**: GPLv2
+**License**: GPLv3

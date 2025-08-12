@@ -1,2 +1,6 @@
+= 2.73.1 12 August 2025 = 
+Corrected License Issue for GPL Software V3.0
+
 = 2.73 20 July 2025 =
 Update to Native 2.73 - ServMask Removed EULA
+

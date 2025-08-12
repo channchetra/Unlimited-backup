@@ -29,7 +29,7 @@ REM =====================================================
 REM CONSTANTS / SHARED TOOLS
 REM (adjust these once if your environment changes)
 REM =====================================================
-SET "HEADER_SCRIPT=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\myplugin_headers.php"
+SET "HEADER_SCRIPT=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\myplugin_headers_gpl3.php"
 SET "TOKEN_FILE=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\github_token.txt"
 SET "GENERATOR_SCRIPT=C:\Ignore By Avast\0. PATHED Items\Plugins\deployscripts\generate_index.php"
 IF EXIST "%TOKEN_FILE%" SET /P GITHUB_TOKEN=<"%TOKEN_FILE%"

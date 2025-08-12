@@ -5,13 +5,13 @@
  * Tested up to:      6.8.2
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           2.73
+ * Version:           2.73.1
  * Author:            stingray82
  * Author URI:        https://github.com/stingray82/
- * License:           GPL2
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPL3
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       unlimited-backup-ai1wmue
- * Website:           https://reallyusefulplugins.com
+ * Website:           https://github.com/stingray82/
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -102,7 +102,7 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 // ===========================================================================
 // = Let's Fork this thing! =
 // ===========================================================================
-define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.73');
+define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.73.1');
 require_once __DIR__ . '/inc/fork.php';
 
 add_action( 'plugins_loaded', function() {
