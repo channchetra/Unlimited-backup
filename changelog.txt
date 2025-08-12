@@ -1,3 +1,6 @@
+= 2.73.4 12 August 2025 = 
+Corrected License Issue for GPL Software V3.0 - build automation check 1
+
 = 2.73.2 12 August 2025 = 
 Corrected License Issue for GPL Software V3.0 - in readme updated automation
 

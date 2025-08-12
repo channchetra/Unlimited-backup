@@ -1,13 +1,12 @@
 === Unlimited Backup Plugin ===
-Contributors: reallyusefulplugins
-Donate link: https://reallyusefulplugins.com/donate
+Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
 Tested up to: 6.8.2
 Stable tag: 2.73.2
 Requires PHP: 8.0
-License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 An addon to allow unlimited file size for all-in-one-migration plugin
 == Description ==
@@ -28,6 +27,9 @@ I plan on pushing updates to this moving forward based on the development of the
 Yes please do, create a pull request and after testing we can then merge it
  
 == Changelog == 
+= 2.73.2 12 August 2025 = 
+Corrected License Issue for GPL Software V3.0 - in readme updated automation
+
 = 2.73.1 12 August 2025 = 
 Corrected License Issue for GPL Software V3.0
 

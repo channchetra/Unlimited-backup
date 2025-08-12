@@ -149,15 +149,14 @@ fi
 # =====================================================
 {
   echo "=== $PLUGIN_NAME ==="
-  echo "Contributors: reallyusefulplugins"
-  echo "Donate link: https://reallyusefulplugins.com/donate"
+  echo "Contributors: Stingray82"
   echo "Tags: $PLUGIN_TAGS"
   echo "Requires at least: $requires_at_least"
   echo "Tested up to: $tested_up_to"
   echo "Stable tag: $version"
   echo "Requires PHP: $requires_php"
-  echo "License: GPL-2.0-or-later"
-  echo "License URI: https://www.gnu.org/licenses/gpl-2.0.html"
+  echo "License: GPL-3.0-or-later"
+  echo "License URI:https://www.gnu.org/licenses/gpl-3.0.html"
   echo
 } > "$temp_readme"
 
