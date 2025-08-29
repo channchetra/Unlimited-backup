@@ -161,10 +161,9 @@ if ( ! class_exists( 'Ai1wmve_Main_Controller' ) ) {
 		 * @return void
 		 */
 		public function ai1wmve_activation_hook() {
-			// Create activation request
-			if ( $this->purchase_id && defined( 'AI1WMVE_PURCHASE_ACTIVATION_URL' ) ) {
-				global $wpdb;
+			global $wpdb;
 
+			if ( ! empty( $this->purchase_id ) ) {
 				wp_remote_post(
 					AI1WMVE_PURCHASE_ACTIVATION_URL,
 					array(
@@ -244,10 +243,12 @@ if ( ! class_exists( 'Ai1wmve_Main_Controller' ) ) {
 				if ( ! has_action( 'admin_post_ai1wm_schedule_event_save' ) ) {
 					add_action( 'admin_post_ai1wm_schedule_event_save', 'Ai1wmve_Schedules_Controller::save' );
 				}
+
 				// Schedule event cron run action
 				if ( ! has_action( Ai1wmve_Schedule_Event::CRON_HOOK ) ) {
 					add_action( Ai1wmve_Schedule_Event::CRON_HOOK, 'Ai1wmve_Schedules_Controller::run' );
 				}
+
 				// Schedule event log actions
 				add_action( 'ai1wm_status_export_done', 'Ai1wmve_Schedules_Controller::log_success' );
 				add_action( 'ai1wm_status_export_error', 'Ai1wmve_Schedules_Controller::log_failed', 10, 2 );
@@ -376,30 +377,6 @@ if ( ! class_exists( 'Ai1wmve_Main_Controller' ) ) {
 			if ( stripos( 'all-in-one-wp-migration_page_ai1wm_import', $hook ) === false ) {
 				return;
 			}
-
-			wp_enqueue_script(
-				'ai1wmve_uploader',
-				Ai1wm_Template::asset_link( 'javascript/pro-uploader.min.js', $this->plugin_prefix ),
-				array( 'jquery' )
-			);
-
-			wp_localize_script(
-				'ai1wmve_uploader',
-				'ai1wmve_uploader',
-				array(
-					'chunk_size'  => apply_filters( 'ai1wm_max_chunk_size', AI1WM_MAX_CHUNK_SIZE ),
-					'max_retries' => apply_filters( 'ai1wm_max_chunk_retries', AI1WM_MAX_CHUNK_RETRIES ),
-					'url'         => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wm_import' ) ),
-					'params'      => array(
-						'priority'   => 5,
-						'secret_key' => get_option( AI1WM_SECRET_KEY ),
-					),
-					'filters'     => array(
-						'ai1wm_archive_extension' => array( 'wpress' ),
-						'ai1wm_archive_size'      => apply_filters( 'ai1wm_max_file_size', $this->ai1wmve_max_file_size() ),
-					),
-				)
-			);
 		}
 
 		/**
@@ -881,18 +858,6 @@ if ( ! class_exists( 'Ai1wmve_Main_Controller' ) ) {
 			$this->router();
 		}
 
-		/**
-		 * Register initial parameters
-		 *
-		 * @return void
-		 */
-		public function ai1wmve_init() {
-			if ( $this->purchase_id ) {
-				$option = strtolower( $this->plugin_prefix ) . '_plugin_key';
-				update_option( $option, $this->purchase_id );
-			}
-		}
-
 		public static function ai1wmve_pro() {
 			return Ai1wm_Template::get_content(
 				'import/pro',
@@ -962,7 +927,6 @@ if ( ! class_exists( 'Ai1wmve_Main_Controller' ) ) {
 		 * @return void
 		 */
 		protected function ai1wmve_activate_actions() {
-			add_action( 'admin_init', array( $this, 'ai1wmve_init' ) );
 			add_action( 'admin_init', array( $this, 'ai1wmve_load_textdomain' ) );
 			add_action( 'admin_init', array( $this, 'ai1wmve_router' ) );
 			add_action( 'admin_head', array( $this, 'ai1wmve_admin_head' ) );
@@ -1018,9 +982,9 @@ if ( ! class_exists( 'Ai1wmve_Main_Controller' ) ) {
 		}
 
 		protected function ai1wmve_send_stats( $action ) {
-			if ( $this->purchase_id ) {
-				global $wpdb;
+			global $wpdb;
 
+			if ( ! empty( $this->purchase_id ) ) {
 				$url = implode(
 					'/',
 					array(

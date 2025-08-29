@@ -275,9 +275,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<label class="ai1wm-event-label" for="ai1wm-event-notification-reminder"><?php _e( 'Reminder', AI1WM_PLUGIN_NAME ); ?></label>
 									<select class="ai1wm-event-input" id="ai1wm-event-notification-reminder" v-model="form.notification.reminder" name="notification[reminder]" required>
 										<option value="" disabled><?php _e( 'Select reminder', AI1WM_PLUGIN_NAME ); ?></option>
-										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_NONE ); ?>"><?php _e( 'No notification', AI1WM_PLUGIN_NAME ); ?></option>
-										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_SUCCESS ); ?>"><?php _e( 'Notify on success', AI1WM_PLUGIN_NAME ); ?></option>
-										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_FAILED ); ?>"><?php _e( 'Notify on failure', AI1WM_PLUGIN_NAME ); ?></option>
+										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_NONE ); ?>"><?php _e( 'Never', AI1WM_PLUGIN_NAME ); ?></option>
+										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_ALWAYS ); ?>"><?php _e( 'Always (Success & Failure)', AI1WM_PLUGIN_NAME ); ?></option>
+										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_SUCCESS ); ?>"><?php _e( 'On Success Only', AI1WM_PLUGIN_NAME ); ?></option>
+										<option value="<?php echo esc_attr( Ai1wmve_Schedule_Event::REMINDER_FAILED ); ?>"><?php _e( 'On Failure Only', AI1WM_PLUGIN_NAME ); ?></option>
 									</select>
 								</div>
 								<div class="ai1wm-event-field">

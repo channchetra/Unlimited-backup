@@ -53,3 +53,25 @@ function rup_unlimited_backup_ai1wmue_filter_ai1wm_extensions() {
 		}
 	}
 }
+
+
+// === Remove Ai1wm Sidebar via CSS/JS Injection ===
+add_action( 'admin_head', 'rup_unlimited_backup_ai1wmue_remove_ai1wm_sidebar' );
+function rup_unlimited_backup_ai1wmue_remove_ai1wm_sidebar() {
+    ?>
+    <style>
+        /* Hide the whole Ai1wm sidebar */
+        .ai1wm-sidebar {
+            display: none !important;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var sidebar = document.querySelector(".ai1wm-sidebar");
+            if (sidebar) {
+                sidebar.remove();
+            }
+        });
+    </script>
+    <?php
+}

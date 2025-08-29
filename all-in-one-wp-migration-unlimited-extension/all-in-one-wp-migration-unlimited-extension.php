@@ -5,7 +5,7 @@
  * Tested up to:      6.8.2
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           2.73.4
+ * Version:           2.75
  * Author:            stingray82
  * Author URI:        https://github.com/stingray82/
  * License:           GPL3
@@ -14,9 +14,65 @@
  * Website:           https://github.com/stingray82/
  */
 
+/*
+ * Copyright (C) 2014-2025 ServMask Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Attribution: This code is part of the All-in-One WP Migration plugin, developed by
+ *
+ * ███████╗███████╗██████╗ ██╗   ██╗███╗   ███╗ █████╗ ███████╗██╗  ██╗
+ * ██╔════╝██╔════╝██╔══██╗██║   ██║████╗ ████║██╔══██╗██╔════╝██║ ██╔╝
+ * ███████╗█████╗  ██████╔╝██║   ██║██╔████╔██║███████║███████╗█████╔╝
+ * ╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██║╚██╔╝██║██╔══██║╚════██║██╔═██╗
+ * ███████║███████╗██║  ██║ ╚████╔╝ ██║ ╚═╝ ██║██║  ██║███████║██║  ██╗
+ * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Kangaroos cannot jump here' );
 }
+
+function ai1wmue_mock_license_response( $pre, $args, $url ) {
+	// Intercept all requests to servmask.com domains
+	if ( false !== strpos( $url, 'servmask.com' ) ) {
+		$body = wp_json_encode(
+			array(
+				'success'        => true,
+				'license_status' => 'valid',
+			)
+		);
+		return array(
+			'headers'  => array(),
+			'body'     => $body,
+			'response' => array(
+				'code'    => 200,
+				'message' => 'OK',
+			),
+			'cookies'  => array(),
+			'filename' => null,
+		);
+	}
+	return false;
+}
+add_filter( 'pre_http_request', 'ai1wmue_mock_license_response', 10, 3 );
+
+// Disable license checks
+function ai1wmue_disable_license_checks() {
+	return true;
+}
+add_filter( 'ai1wm_license_validation', 'ai1wmue_disable_license_checks', 10, 0 );
 
 if ( is_multisite() ) {
 	// Multisite Extension shall be used instead
@@ -102,7 +158,7 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 // ===========================================================================
 // = Let's Fork this thing! =
 // ===========================================================================
-define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.73.4');
+define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.75');
 require_once __DIR__ . '/inc/fork.php';
 
 add_action( 'plugins_loaded', function() {

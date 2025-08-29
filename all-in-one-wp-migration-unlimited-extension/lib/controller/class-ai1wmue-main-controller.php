@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2020 ServMask Inc.
+ * Copyright (C) 2014-2025 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,6 +14,8 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * Attribution: This code is part of the All-in-One WP Migration plugin, developed by
  *
  * ███████╗███████╗██████╗ ██╗   ██╗███╗   ███╗ █████╗ ███████╗██╗  ██╗
  * ██╔════╝██╔════╝██╔══██╗██║   ██║████╗ ████║██╔══██╗██╔════╝██║ ██╔╝
@@ -56,6 +58,15 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_import_scripts_and_styles' ), 20 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backups_scripts_and_styles' ), 20 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_settings_scripts_and_styles' ), 20 );
+		
+		// Add import unlimited file size
+		add_filter( 'ai1wm_max_file_size', array( $this, 'ai1wmue_max_file_size' ) );
+		
+		// Override import view to show unlimited
+		add_filter( 'ai1wm_import_max_file_size', array( $this, 'ai1wmue_max_file_size' ) );
+		
+		// Use pro import view
+		add_action( 'ai1wm_import_advanced_settings', array( $this, 'import_advanced_settings' ) );
 	}
 
 	/**
@@ -66,6 +77,7 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 	public function ai1wm_commands() {
 		if ( ai1wmue_is_running() ) {
 			add_filter( 'ai1wm_export', 'Ai1wmue_Export_Retention::execute', 270 );
+			add_filter( 'ai1wm_import', 'Ai1wmue_Import_Upload::execute', 5 );
 			add_filter( 'ai1wm_import', 'Ai1wmue_Import_Settings::execute', 290 );
 			add_filter( 'ai1wm_import', 'Ai1wmue_Import_Database::execute', 310 );
 		}
@@ -166,7 +178,52 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 			return;
 		}
 
+		// File uploader
+		wp_localize_script(
+			'ai1wm_import',
+			'ai1wmue_file_uploader',
+			array(
+				'config'  => array(
+					'chunk_size'  => (int) apply_filters( 'ai1wm_max_chunk_size', AI1WM_MAX_CHUNK_SIZE ),
+					'max_retries' => (int) apply_filters( 'ai1wm_max_chunk_retries', AI1WM_MAX_CHUNK_RETRIES ),
+					'max_file_size' => 0, // Unlimited
+				),
+				'url'     => wp_make_link_relative( add_query_arg( array( 'ai1wm_import' => 1 ), admin_url( 'admin-ajax.php?action=ai1wm_import' ) ) ),
+				'params'  => array(
+					'priority'   => 5,
+					'secret_key' => get_option( AI1WM_SECRET_KEY ),
+				),
+				'filters' => array(
+					'ai1wm_archive_extension' => array( 'wpress' ),
+					'ai1wm_max_file_size' => 0, // Unlimited
+				),
+			)
+		);
+
+		// Override the base plugin's max file size
+		wp_localize_script(
+			'ai1wm_import',
+			'ai1wm_uploader',
+			array(
+				'config'  => array(
+					'chunk_size'  => (int) apply_filters( 'ai1wm_max_chunk_size', AI1WM_MAX_CHUNK_SIZE ),
+					'max_retries' => (int) apply_filters( 'ai1wm_max_chunk_retries', AI1WM_MAX_CHUNK_RETRIES ),
+					'max_file_size' => 0, // Unlimited
+				),
+				'url'     => wp_make_link_relative( add_query_arg( array( 'ai1wm_import' => 1 ), admin_url( 'admin-ajax.php?action=ai1wm_import' ) ) ),
+				'params'  => array(
+					'priority'   => 5,
+					'secret_key' => get_option( AI1WM_SECRET_KEY ),
+				),
+				'filters' => array(
+					'ai1wm_archive_extension' => array( 'wpress' ),
+					'ai1wm_max_file_size' => 0, // Unlimited
+				),
+			)
+		);
+
 		add_action( 'admin_print_scripts', array( $this, 'google_tag_manager' ) );
+		add_action( 'admin_print_scripts', array( $this, 'override_max_file_size_js' ) );
 	}
 
 	/**
@@ -233,7 +290,7 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 			'ai1wm_feedback',
 			array(
 				'ajax'       => array(
-					'url' => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wm_feedback' ) ),
+					'url' => wp_make_link_relative( add_query_arg( array( 'ai1wm_import' => 1 ), admin_url( 'admin-ajax.php?action=ai1wm_feedback' ) ) ),
 				),
 				'secret_key' => get_option( AI1WM_SECRET_KEY ),
 			)
@@ -244,7 +301,7 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 			'ai1wmue_folder_browser',
 			array(
 				'ajax'       => array(
-					'url' => wp_make_link_relative( admin_url( 'admin-ajax.php?action=ai1wmue_folder_browser' ) ),
+					'url' => wp_make_link_relative( add_query_arg( array( 'ai1wm_import' => 1 ), admin_url( 'admin-ajax.php?action=ai1wmue_folder_browser' ) ) ),
 				),
 				'secret_key' => get_option( AI1WM_SECRET_KEY ),
 			)
@@ -301,5 +358,54 @@ class Ai1wmue_Main_Controller extends Ai1wmve_Main_Controller {
 			array(),
 			AI1WMUE_TEMPLATES_PATH
 		);
+	}
+
+	/**
+	 * Max file size callback
+	 *
+	 * @return integer
+	 */
+	public function ai1wmue_max_file_size() {
+		return 0; // Unlimited
+	}
+
+	/**
+	 * Import advanced settings
+	 *
+	 * @return void
+	 */
+	public function import_advanced_settings() {
+		Ai1wm_Template::render(
+			'import/pro',
+			array(),
+			AI1WMUE_VENDOR_PATH . DIRECTORY_SEPARATOR . 'servmask' . DIRECTORY_SEPARATOR . 'pro' . DIRECTORY_SEPARATOR . 'view'
+		);
+	}
+
+	/**
+	 * Override max file size in JavaScript
+	 *
+	 * @return void
+	 */
+	public function override_max_file_size_js() {
+		?>
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			// Override any max file size validation
+			if (typeof ai1wm_uploader !== 'undefined') {
+				ai1wm_uploader.config.max_file_size = 0;
+				ai1wm_uploader.filters.ai1wm_max_file_size = 0;
+			}
+			if (typeof ai1wmue_file_uploader !== 'undefined') {
+				ai1wmue_file_uploader.config.max_file_size = 0;
+				ai1wmue_file_uploader.filters.ai1wm_max_file_size = 0;
+			}
+			// Override global max file size
+			if (typeof window.ai1wm_max_file_size !== 'undefined') {
+				window.ai1wm_max_file_size = 0;
+			}
+		});
+		</script>
+		<?php
 	}
 }

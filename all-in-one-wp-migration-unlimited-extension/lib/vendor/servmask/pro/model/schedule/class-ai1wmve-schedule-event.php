@@ -50,6 +50,7 @@ if ( ! class_exists( 'Ai1wmve_Schedule_Event' ) ) {
 		const REMINDER_NONE    = 'Off';
 		const REMINDER_SUCCESS = 'Success';
 		const REMINDER_FAILED  = 'Failed';
+		const REMINDER_ALWAYS  = 'Always';
 
 		const CRON_HOOK = 'ai1wmve_schedule_event';
 
@@ -402,11 +403,11 @@ if ( ! class_exists( 'Ai1wmve_Schedule_Event' ) ) {
 		}
 
 		public function is_success_notification_enabled() {
-			return $this->notification['reminder'] === static::REMINDER_SUCCESS && $this->notification['status'] === static::STATUS_ENABLED;
+			return $this->notification['status'] === static::STATUS_ENABLED && ( $this->notification['reminder'] === static::REMINDER_SUCCESS || $this->notification['reminder'] === static::REMINDER_ALWAYS );
 		}
 
 		public function is_failed_notification_enabled() {
-			return $this->notification['reminder'] === static::REMINDER_FAILED && $this->notification['status'] === static::STATUS_ENABLED;
+			return $this->notification['status'] === static::STATUS_ENABLED && ( $this->notification['reminder'] === static::REMINDER_FAILED || $this->notification['reminder'] === static::REMINDER_ALWAYS );
 		}
 
 		public function notification_email() {
