@@ -27,6 +27,13 @@ I plan on pushing updates to this moving forward based on the development of the
 Yes please do, create a pull request and after testing we can then merge it
 
 == Changelog ==
+= 2.75 29 August 2025 = 
+- Updated to Native 2.75
+- Added New Hide Side Menu
+- Reapplied new copyright statements from ServMask to all files
+- Note New filters for Back and export Sizes
+
+
 = 2.73.5 12 August 2025 = 
 Corrected License Issue for GPL Software V3.0 - build automation check 2
 

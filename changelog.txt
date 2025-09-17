@@ -1,3 +1,8 @@
+= 2.76 17 September 2025 = 
+- Updated to Native 2.76
+- Testing if we need the mock license is on going as the changes to fork.php should be sufficient. This would result in easier releases and maybe even fully automated releases.
+
+
 = 2.75 29 August 2025 = 
 - Updated to Native 2.75
 - Added New Hide Side Menu

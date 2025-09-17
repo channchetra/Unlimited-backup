@@ -3,7 +3,7 @@ Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
 Tested up to: 6.8.2
-Stable tag: 2.75
+Stable tag: 2.76
 Requires PHP: 8.0
 License: GPL-3.0-or-later
 License URI:https://www.gnu.org/licenses/gpl-3.0.html
@@ -27,6 +27,11 @@ I plan on pushing updates to this moving forward based on the development of the
 Yes please do, create a pull request and after testing we can then merge it
 
 == Changelog ==
+= 2.76 17 September 2025 = 
+- Updated to Native 2.76
+- Testing if we need the mock license is on going as the changes to fork.php should be sufficient. This would result in easier releases and maybe even fully automated releases.
+
+
 = 2.75 29 August 2025 = 
 - Updated to Native 2.75
 - Added New Hide Side Menu
