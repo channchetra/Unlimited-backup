@@ -11,13 +11,13 @@ license](https://www.gnu.org/licenses/gpl-3.0.html).
 
 **This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
 
-The contained code is licensed under GPLv3 and is a fork of the original code, file names and directory names are for compatibility reasons only and do not signal endorsement or affiliation. Copyright information is retained as it should be legally retained even under a GPLv3 licence. It gives me the right to fork not pass off code which isn't mine. 
+The contained code is licensed under GPLv3 and is a fork of the original code, file names and directory names are for compatibility reasons only and do not signal endorsement or affiliation. Copyright information is retained as it should be legally retained even under a GPLv3 licence. It gives us the right to fork not pass off code which isn't ours. 
 
 
 
 ### Please Note 1st August 2025:
 
-I have recevied a DMCA takedown request for this repo, it is inaccurate and poorly worded and this repository is totally legal under the GPL licence as such I have defended it but ultimately github will make there own decision on this.
+We have received a DMCA takedown request for this repo, it is inaccurate and poorly worded and this repository is totally legal under the GPL licence as such I have defended it but ultimately github will make there own decision on this.
 
 ### 6th October 2025
 
@@ -111,7 +111,7 @@ Use this list to reapply customizations if you merge changes from upstream:
 🙌 Credits
 ---------
 
--   [ServMask Inc.](https://servmask.com/) — for the original plugin - **This repository is not owned, maintained by Servmask **ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc
+-   [ServMask Inc.](https://servmask.com/) — for the original plugin - **This repository is not owned, maintained or endorsed by Servmask **ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc
 
 -   [UUPD Project](https://github.com/stingray82/uupd) — for the lightweight
     update system
