@@ -3,7 +3,7 @@ Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
 Tested up to: 6.8.2
-Stable tag: 2.76
+Stable tag: 2.76.1
 Requires PHP: 8.0
 License: GPL-3.0-or-later
 License URI:https://www.gnu.org/licenses/gpl-3.0.html
@@ -12,7 +12,7 @@ An addon to allow unlimited file size for all-in-one-migration plugin
 == Description ==
 Install on your dashboard and it will enable unlimited backup
 == Installation ==
-1. Upload the `all-in-one-wp-migration-unlimited-extension` folder to the `/wp-content/plugins/` directory.
+1. Upload the `unlimited-backup-ai1wmue` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
@@ -28,9 +28,17 @@ Yes please do, create a pull request and after testing we can then merge it
 = Is this "Official"? =
 It is a fork of the original unlimited backup The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
 
-This version is not endorsed or owned by, or affiliated with ServMask, Inc you should purchase from Servmask if you want official.
+This version is not endorsed or owned by, or affiliated with ServMask, Inc you should purchase from Servmask if you want official
 
 == Changelog ==
+= 2.76.1 17 September 2025 = 
+- Updated Readme
+- Please note the trademark information below!
+
+Note: The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
+
+**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
+
 = 2.76 17 September 2025 = 
 - Updated to Native 2.76
 - Testing if we need the mock license is on going as the changes to fork.php should be sufficient. This would result in easier releases and maybe even fully automated releases.
