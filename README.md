@@ -1,29 +1,37 @@
-Unlimited Backup Plugin – Fork of ServMask Unlimited Extension
-==============================================================
+# Unlimited Backup (Community Fork for All-in-One WP Migration®)
+
+> ⚠️ **Important Trademark Disclaimer**  
+> This is an **independent, community-maintained fork** of the “Unlimited Extension” plugin for WordPress.  
+> **ALL-IN-ONE WP MIGRATION®** is a registered trademark of **ServMask, Inc.**  
+> This project is **not affiliated with, endorsed by, or sponsored by ServMask, Inc.**  
+> Any use of “ALL-IN-ONE WP MIGRATION®” names is **solely for identification and compatibility purposes** and **does not imply any endorsement or affiliation**.  
+>
+> Some file and folder names remain unchanged **solely for technical compatibility and interoperability purposes**, as altering them would break core functionality. Their presence does not imply endorsement or association.
+
+**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
+
+Copyright information is retained as it should be legally retained even under a GPLv3 licence. It gives us the right to fork not pass off code which isn't ours. 
+
+---
+
+## About This Fork  
 
 This project is a community-maintained fork of the "Unlimited Extension" for the  [All-in-One WP
 Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It aims to provide continued freedom, maintainability, and usability under the [GPL
 license](https://www.gnu.org/licenses/gpl-3.0.html).
 
-**Important**
+### 1st August 2025
 
-**The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
-
-**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
-
-The contained code is licensed under GPLv3 and is a fork of the original code, file names and directory names are for compatibility reasons only and do not signal endorsement or affiliation. Copyright information is retained as it should be legally retained even under a GPLv3 licence. It gives us the right to fork not pass off code which isn't ours. 
-
-
-
-### Please Note 1st August 2025:
-
-We have received a DMCA takedown request for this repo, it is inaccurate and poorly worded and this repository is totally legal under the GPL licence as such I have defended it but ultimately github will make there own decision on this.
+In August 2025, ServMask Inc. submitted a **DMCA takedown request** against this repository alleging copyright infringement.  
+After review, **GitHub determined after some minor changes that the repository was compliant with the GPLv3 licence**, and the takedown was not enforced. 
 
 ### 6th October 2025
 
-ServMask Inc have again attempted to remove this repository this time with a trademark claim, GitHub feel this meets there nominative reference allowance just to be 100% clear please see the disclaimer above about the trademark and that this is **not** an official release, it is **not** endorsed by or anything to do with Servmask Inc.
+ServMask Inc. has now submitted a **separate complaint based on trademark**.  
+GitHub has reviewed this and, as of now, considers the repository to fall within **nominative fair use** of the “ALL-IN-ONE WP MIGRATION®” mark.  
+To make things as clear as possible, please see the trademark disclaimer at the top of this document — this project is **not an official release**, **not endorsed by ServMask**, and remains an **independent GPL-licensed community fork**.
 
-The folder and file names are the same to allow compatibility staying as true to source as possible so you can check its clean, all copyright headers remain in place as this is just a community fork of there plugin under a GPLv3 licence and it doesn't remove there copyright this is a **FREEDOM** licence which allows us to fork this plugin.
+Some folder and file names remain unchanged to preserve functionality and compatibility. Changing them would break core features, and their presence **does not imply endorsement or affiliation**.
 
 ✨ Key Changes in This Fork
 
@@ -111,7 +119,7 @@ Use this list to reapply customizations if you merge changes from upstream:
 🙌 Credits
 ---------
 
--   [ServMask Inc.](https://servmask.com/) — for the original plugin - **This repository is not owned, maintained or endorsed by Servmask **ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc
+-   [ServMask Inc.](https://servmask.com/) — for the original plugin.  **This repository is not owned, maintained, or endorsed by ServMask, Inc.**  “ALL-IN-ONE WP MIGRATION®” is a registered trademark of ServMask, Inc.
 
 -   [UUPD Project](https://github.com/stingray82/uupd) — for the lightweight
     update system
@@ -133,6 +141,4 @@ Pull requests and issue suggestions are welcome. Especially if you want to:
 
 
 
-**The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
-
-**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
+> **Trademark Notice:** “ALL-IN-ONE WP MIGRATION®” is a registered trademark of ServMask, Inc. This project is not affiliated with, endorsed by, or sponsored by ServMask, Inc.
