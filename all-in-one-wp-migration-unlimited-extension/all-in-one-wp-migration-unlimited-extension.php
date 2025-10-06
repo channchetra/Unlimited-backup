@@ -15,6 +15,14 @@
  */
 
 /*
+ * Trademark notice: “ALL-IN-ONE WP MIGRATION®” is a registered trademark of ServMask, Inc.
+ * Non-affiliation: This project is not affiliated with, endorsed by, or sponsored by ServMask, Inc.
+ *
+ * Technical note: Certain internal constants, folder and file names are retained solely for interoperability; changing them would break functionality. Their presence does not imply endorsement or association.
+ *
+*/
+
+/*
  * Copyright (C) 2014-2025 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -159,6 +167,7 @@ $main_controller = new Ai1wmue_Main_Controller( 'AI1WMUE', 'file' );
 // = Let's Fork this thing! =
 // ===========================================================================
 define('RUP_UNLIMITED_BACKUP_AI1WMUE_VERSION', '2.79');
+define( 'RUP_UNLIMITED_BACKUP_MAIN_FILE', __FILE__ );
 require_once __DIR__ . '/inc/fork.php';
 
 add_action( 'plugins_loaded', function() {
