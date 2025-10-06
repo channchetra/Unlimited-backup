@@ -1,20 +1,31 @@
 Unlimited Backup Plugin – Fork of ServMask Unlimited Extension
 ==============================================================
 
-This project is a community-maintained fork of the "Unlimited Extension" for the
-[All-in-One WP
-Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It
-aims to provide continued freedom, maintainability, and usability under the [GPL
+This project is a community-maintained fork of the "Unlimited Extension" for the  [All-in-One WP
+Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) plugin. It aims to provide continued freedom, maintainability, and usability under the [GPL
 license](https://www.gnu.org/licenses/gpl-3.0.html).
+
+**Important**
+
+**The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
+
+**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
+
+The contained code is licensed under GPLv3 and is a fork of the original code, file names and directory names are for compatibility reasons only and do not signal endorsement or affiliation. Copyright information is retained as it should be legally retained even under a GPLv3 licence. It gives me the right to fork not pass off code which isn't mine. 
+
+
 
 ### Please Note 1st August 2025:
 
-I have recevied a DMCA takedown request for this repo, it is inaccurate and
-poorly worded and this repository is totally legal under the GPL licence as such
-I have defended it but ultimately github will make there own decision on this.
+I have recevied a DMCA takedown request for this repo, it is inaccurate and poorly worded and this repository is totally legal under the GPL licence as such I have defended it but ultimately github will make there own decision on this.
+
+### 6th October 2025
+
+ServMask Inc have again attempted to remove this repository this time with a trademark claim, GitHub feel this meets there nominative reference allowance just to be 100% clear please see the disclaimer above about the trademark and that this is **not** an official release, it is **not** endorsed by or anything to do with Servmask Inc.
+
+The folder and file names are the same to allow compatibility staying as true to source as possible so you can check its clean, all copyright headers remain in place as this is just a community fork of there plugin under a GPLv3 licence and it doesn't remove there copyright this is a **FREEDOM** licence which allows us to fork this plugin.
 
 ✨ Key Changes in This Fork
---------------------------
 
 ### ✅ EULA Prompt Removed
 
@@ -100,7 +111,7 @@ Use this list to reapply customizations if you merge changes from upstream:
 🙌 Credits
 ---------
 
--   [ServMask Inc.](https://servmask.com/) — for the original plugin
+-   [ServMask Inc.](https://servmask.com/) — for the original plugin - **This repository is not owned, maintained by Servmask **ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc
 
 -   [UUPD Project](https://github.com/stingray82/uupd) — for the lightweight
     update system
@@ -119,3 +130,9 @@ Pull requests and issue suggestions are welcome. Especially if you want to:
 -   Refactor patching into optional modules
 
 **License**: GPLv3
+
+
+
+**The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
+
+**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 

@@ -1,3 +1,11 @@
+= 2.76.1 17 September 2025 = 
+- Updated Readme
+- Please note the trademark information below!
+
+Note: The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
+
+**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
+
 = 2.76 17 September 2025 = 
 - Updated to Native 2.76
 - Testing if we need the mock license is on going as the changes to fork.php should be sufficient. This would result in easier releases and maybe even fully automated releases.

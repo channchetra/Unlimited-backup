@@ -3,7 +3,7 @@ Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
 Tested up to: 6.8.2
-Stable tag: 2.76
+Stable tag: 2.76.1
 Requires PHP: 8.0
 License: GPL-3.0-or-later
 License URI:https://www.gnu.org/licenses/gpl-3.0.html
@@ -25,8 +25,20 @@ The plugin is GPL and the GPL licence allows you to do this, if you want to make
 I plan on pushing updates to this moving forward based on the development of the original plugin and its addon, updates will be served automatically using another of my projects UUPD just like any other WordPress plugin
 = Can I contribute? =
 Yes please do, create a pull request and after testing we can then merge it
+= Is this "Official"? =
+It is a fork of the original unlimited backup The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
+
+This version is not endorsed or owned by, or affiliated with ServMask, Inc you should purchase from Servmask if you want official
 
 == Changelog ==
+= 2.76.1 17 September 2025 = 
+- Updated Readme
+- Please note the trademark information below!
+
+Note: The ALL-IN-ONE WP MIGRATION® trademarks are the intellectual property of the ServMask, Inc . Uses of the  ALL-IN-ONE WP MIGRATION®, names in this Repo and Plugin are for identification and compatibility purposes only and do not imply an endorsement by ServMask, Inc** 
+
+**This repo is not endorsed or owned by, or affiliated with ServMask, Inc** 
+
 = 2.76 17 September 2025 = 
 - Updated to Native 2.76
 - Testing if we need the mock license is on going as the changes to fork.php should be sufficient. This would result in easier releases and maybe even fully automated releases.
