@@ -2,8 +2,8 @@
 Contributors: Stingray82
 Tags: All-in-one-migration, backup, unlimited
 Requires at least: 6.5
-Tested up to: 6.8.2
-Stable tag: 2.76.1
+Tested up to: 6.8.3
+Stable tag: 2.79
 Requires PHP: 8.0
 License: GPL-3.0-or-later
 License URI:https://www.gnu.org/licenses/gpl-3.0.html
@@ -31,7 +31,10 @@ It is a fork of the original unlimited backup The ALL-IN-ONE WP MIGRATION® trad
 This version is not endorsed or owned by, or affiliated with ServMask, Inc you should purchase from Servmask if you want official
 
 == Changelog ==
-= 2.76.1 17 September 2025 = 
+= 2.79 06 October 2025 = 
+- Update to Native 2.79 there where three updates between the last update and this one 2 of which where bug fixes it has been 24 hours so we think all is now stable.
+
+= 2.76.1 06 October 2025 = 
 - Updated Readme
 - Please note the trademark information below!
 

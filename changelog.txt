@@ -1,3 +1,9 @@
+= 2.79.1 07 October 2025 =
+- Added new trademark disclaimers in the plugin list and "View Details" modal to ensure users are clearly informed this is an independent fork not affiliated with ServMask, Inc.
+- Introduced `RUP_UB_DISABLE_DISCLAIMER` constant and `rup_ub_disclaimer_enabled` filter, allowing advanced users to optionally disable disclaimer messages if desired.
+- Updated plugin row meta cleanup to remove ServMask support/update links while retaining essential functionality.
+- Improved overall code clarity and documentation regarding GPL rights, nominative fair use, and technical compatibility.
+
 = 2.79 06 October 2025 = 
 - Update to Native 2.79 there where three updates between the last update and this one 2 of which where bug fixes it has been 24 hours so we think all is now stable.
 
